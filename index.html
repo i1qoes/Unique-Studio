@@ -98,7 +98,7 @@
 <section id="order" class="order">
     <h2>🎫 ส่งพล็อตมาเลย</h2>
 
-    <form>
+    <form onsubmit="sendBrief(event)">
         <input type="text" placeholder="ชื่อที่ต้องการให้เรียก">
 
         <input type="text" placeholder="Discord Username">
@@ -141,6 +141,26 @@
 <footer>
     <p>© 2026 Unique Studio 💜</p>
 </footer>
+
+<script>
+function sendBrief(event){
+    event.preventDefault();
+
+    fetch("ใส่ Webhook Discord ตรงนี้", {
+        method: "POST",
+        headers:{
+            "Content-Type":"application/json"
+        },
+        body: JSON.stringify({
+            content:
+            "🎫 บรีฟใหม่จาก Unique Studio\n\n" +
+            "มีลูกค้าส่งพล็อตเข้ามาแล้ว!"
+        })
+    });
+
+    alert("ส่งบรีฟเรียบร้อย 💜");
+}
+</script>
 
 </body>
 </html>
