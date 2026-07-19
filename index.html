@@ -99,31 +99,31 @@
     <h2>🎫 ส่งพล็อตมาเลย</h2>
 
     <form onsubmit="sendBrief(event)">
-        <input type="text" placeholder="ชื่อที่ต้องการให้เรียก">
+        <input id="name" type="text" placeholder="ชื่อที่ต้องการให้เรียก">
 
-        <input type="text" placeholder="Discord Username">
+        <input id="discord" type="text" placeholder="Discord Username">
 
-        <input type="text" placeholder="Instagram Username">
+        <input id="instagram" type="text" placeholder="Instagram Username">
 
-        <input type="text" placeholder="คู่ชิป / ตัวละคร">
+        <input id="ship" type="text" placeholder="คู่ชิป / ตัวละคร">
 
-        <input type="text" placeholder="แฟนด้อม">
+        <input id="fandom" type="text" placeholder="แฟนด้อม">
 
-        <input type="text" placeholder="ประเภทงาน">
+        <input id="type" type="text" placeholder="ประเภทงาน">
 
-        <input type="text" placeholder="แนวเรื่อง">
+        <input id="genre" type="text" placeholder="แนวเรื่อง">
 
-        <input type="text" placeholder="เรตติ้ง">
+        <input id="rating" type="text" placeholder="เรตติ้ง">
 
-        <input type="text" placeholder="จำนวนคำ">
+        <input id="words" type="text" placeholder="จำนวนคำ">
 
-        <textarea rows="6" placeholder="พล็อตหรือรายละเอียดงาน"></textarea>
+        <textarea id="plot" rows="6" placeholder="พล็อตหรือรายละเอียดงาน"></textarea>
 
-        <textarea rows="4" placeholder="สิ่งที่อยากให้มีในเรื่อง"></textarea>
+        <textarea id="want" rows="4" placeholder="สิ่งที่อยากให้มีในเรื่อง"></textarea>
 
-        <textarea rows="4" placeholder="สิ่งที่ไม่ต้องการให้มีในเรื่อง"></textarea>
+        <textarea id="dont" rows="4" placeholder="สิ่งที่ไม่ต้องการให้มีในเรื่อง"></textarea>
 
-        <textarea rows="4" placeholder="หมายเหตุเพิ่มเติม"></textarea>
+        <textarea id="note" rows="4" placeholder="หมายเหตุเพิ่มเติม"></textarea>
 
         <button type="submit">
             ส่งบรีฟ
@@ -146,15 +146,68 @@
 function sendBrief(event){
     event.preventDefault();
 
+    let name = document.getElementById("name").value;
+    let discord = document.getElementById("discord").value;
+    let instagram = document.getElementById("instagram").value;
+    let ship = document.getElementById("ship").value;
+    let fandom = document.getElementById("fandom").value;
+    let type = document.getElementById("type").value;
+    let genre = document.getElementById("genre").value;
+    let rating = document.getElementById("rating").value;
+    let words = document.getElementById("words").value;
+    let plot = document.getElementById("plot").value;
+    let want = document.getElementById("want").value;
+    let dont = document.getElementById("dont").value;
+    let note = document.getElementById("note").value;
+
+
     fetch("https://discord.com/api/webhooks/1528460658902040741/aLKzMafiWZlZtaBsVv2j3OzwRnS3uJ_pSS5Q4JlfCv4RZeW0oitsZyo17HyJTrETD4Bx", {
-        method: "POST",
+        method:"POST",
         headers:{
             "Content-Type":"application/json"
         },
-        body: JSON.stringify({
+        body:JSON.stringify({
             content:
-            "🎫 บรีฟใหม่จาก Unique Studio\n\n" +
-            "มีลูกค้าส่งพล็อตเข้ามาแล้ว!"
+`🎫 บรีฟใหม่จาก Unique Studio
+
+👤 ชื่อ:
+${name}
+
+💬 Discord:
+${discord}
+
+📸 Instagram:
+${instagram}
+
+💜 คู่ชิป / ตัวละคร:
+${ship}
+
+🌌 แฟนด้อม:
+${fandom}
+
+📖 ประเภทงาน:
+${type}
+
+✨ แนวเรื่อง:
+${genre}
+
+🔞 เรตติ้ง:
+${rating}
+
+📝 จำนวนคำ:
+${words}
+
+📜 พล็อต:
+${plot}
+
+✅ สิ่งที่อยากให้มี:
+${want}
+
+❌ สิ่งที่ไม่ต้องการ:
+${dont}
+
+📌 หมายเหตุ:
+${note}`
         })
     });
 
