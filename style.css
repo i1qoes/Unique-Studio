@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Poppins:wght@300;400;500;600&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#ffffff;
+    color:#4d3d63;
+    line-height:1.8;
+}
+
+header{
+    text-align:center;
+    padding:100px 20px;
+}
+
+.logo{
+    margin-bottom:20px;
+}
+
+.unique{
+    font-family:'Caveat',cursive;
+    font-size:5rem;
+    color:#8e72d9;
+}
+
+.studio{
+    display:block;
+    letter-spacing:8px;
+    font-size:1rem;
+    color:#7b68b8;
+}
+
+.tagline{
+    max-width:600px;
+    margin:20px auto;
+    font-size:1.1rem;
+}
+
+.btn{
+    display:inline-block;
+    margin-top:20px;
+    background:#8e72d9;
+    color:white;
+    text-decoration:none;
+    padding:14px 30px;
+    border-radius:30px;
+    transition:.3s;
+}
+
+.btn:hover{
+    transform:translateY(-3px);
+}
+
+section{
+    max-width:900px;
+    margin:auto;
+    padding:70px 20px;
+}
+
+h2{
+    color:#8e72d9;
+    margin-bottom:25px;
+}
+
+.card{
+    display:block;
+    text-decoration:none;
+    color:#4d3d63;
+    background:#f6f1ff;
+    padding:20px;
+    border-radius:16px;
+    margin-bottom:15px;
+}
+
+.price-box{
+    background:#f6f1ff;
+    padding:25px;
+    border-radius:16px;
+}
+
+.rules ul{
+    padding-left:20px;
+}
+
+.order form{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+input,
+textarea{
+    border:1px solid #d7c7ff;
+    border-radius:12px;
+    padding:14px;
+    font-family:inherit;
+}
+
+button{
+    border:none;
+    background:#8e72d9;
+    color:white;
+    padding:15px;
+    border-radius:12px;
+    cursor:pointer;
+}
+
+.contact{
+    text-align:center;
+}
+
+footer{
+    text-align:center;
+    padding:40px;
+    color:#888;
+}
